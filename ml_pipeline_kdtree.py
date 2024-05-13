@@ -10,7 +10,6 @@ import time
 import pickle
 import itertools
 import sys
-sys.setrecursionlimit(10000)
 
 pd.options.display.max_rows = None
 
@@ -19,7 +18,7 @@ pd.options.display.max_rows = None
 
 # First, let's define the path to the rerun directory and the subdirectories we're interested in.
 rerun_path = '/Users/wan404/Documents/bmf.raw/data/rerun/'
-subsystems = ['chiller_all']
+subsystems = ['chiller_all', 'bmf_all', 'drx_all', 'paf_indoor', 'paf_all']
 
 # Initialize a dictionary where keys are subsystem names and values will be dataframes of anomalies.
 subsystem_anomalies = {subsystem: pd.DataFrame() for subsystem in subsystems}
