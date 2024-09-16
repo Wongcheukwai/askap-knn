@@ -8,24 +8,25 @@ import glob
 import os
 import time
 import pickle
-# 设置Pandas和Matplotlib的选项
+
 pd.options.display.max_rows = None
 
 # Assuming the rerun directory has five subdirectories, each corresponding to a different subsystem,
 # and you want to create a list where each element is a DataFrame containing the anomalies for that subsystem.
 
 # First, let's define the path to the rerun directory and the subdirectories we're interested in.
-rerun_path = '/Users/wan404/Documents/bmf.raw/data/rerun/'
+rerun_path = 'your path'
 subsystems = ['chiller_all', 'bmf_all', 'drx_all', 'paf_indoor', 'paf_all']
 
 # Initialize a dictionary where keys are subsystem names and values will be dataframes of anomalies.
 subsystem_anomalies = {subsystem: pd.DataFrame() for subsystem in subsystems}
 
+# This is the time interval you’ve selected to run the algorithm.
 start_period = '2022-02-13 08:00:00'
 end_period = '2022-02-15 09:00:00'
 
 # Create a directory to save the figures
-figures_directory = '/Users/wan404/Documents/bmf.raw/data/figures/'
+figures_directory = 'your path'
 os.makedirs(figures_directory, exist_ok=True)
 
 # Process files for each subsystem
@@ -157,13 +158,3 @@ summary_df_list = list(subsystem_anomalies.values())
 # Check the number of anomalies detected in each subsystem by printing the shape of each DataFrame
 for i, df in enumerate(summary_df_list):
     print(f"Subsystem {subsystems[i]} anomalies shape: {df.shape}")
-
-#Save the list of DataFrames to a pickle file
-with open('/Users/wan404/Documents/bmf.raw/data/summary_df_list.pkl', 'wb') as f:
-   pickle.dump(summary_df_list, f)
-
-print("The list of summary DataFrames has been saved to 'summary_df_list.pkl'.")
-
-
-print("Results gathering finished for each subsystem.")
-
