@@ -1,5 +1,6 @@
 ```markdown
-# Collaborative Anomaly Detection in ASKAP Monitoring Data
+# Collaborative Anomaly Detection in ASKAP Monitoring Data:
+Integrating Machine Intelligence with Human Expertise
 
 This repository contains Python scripts for processing various types of time-series data (PAF, DRX, BMF, Chiller) of ASKAP monitoring data and performing anomaly detection using machine learning techniques. The project is divided into three main components: data processing, machine learning methods for anomaly detection, and data visualization.
 
@@ -168,12 +169,4 @@ Note: Update the file paths and time ranges in these scripts to match your proce
 - scikit-learn
 - adtk (Anomaly Detection Toolkit)
 
-Install the required packages using:
 
-```
-
-pip install pandas numpy matplotlib seaborn scikit-learn adtk
-
-```
-
-```
